@@ -1,11 +1,13 @@
+const WAS_IP = process.env.WAS;
+const PORT = 3000;
+
 const path = require('path');
-
 const express = require('express');
-
 const axios = require('axios');
 
 const app = express();
 const bodyParser = require('body-parser');
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -67,7 +69,7 @@ app.post('/purchase', async (req, res) => {
   
   try {
       // Replace with the actual URL of your WAS, e.g., 'http://192.168.1.2:4000/user-data'
-      const response = await axios.post(`http://10.0.3.202:4000/purchase`, {data: info});
+      const response = await axios.post(`http://${WAS_IP}/purchase`, {data: info});
       res.redirect('/prdmain');
       console.log("purchase completed: (" + response.data + ")");
   } catch (error) {
@@ -75,5 +77,7 @@ app.post('/purchase', async (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(PORT, () => {
+  console.log(`WAS running on ${PORT} port`);
+});
 

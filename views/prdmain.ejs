@@ -31,6 +31,32 @@
 <script src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/js/ul.js"></script>
 <script src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/js/ul_main"></script>
 <script src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/js/ptdslick.js"></script>
+<!-- <script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var button = document.querySelector('.opt_buying button');
+	
+		button.addEventListener('onclick', function(event) {
+			//event.preventDefault(); // Prevents the form from submitting
+			alert('구매 완료하였습니다.'); // Shows the prompt
+		});
+	});
+	
+</script> -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all buttons within '.opt_buying' divs
+        var buttons = document.querySelectorAll('.opt_buying button');
+
+        // Loop through each button and attach an event listener
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                //event.preventDefault(); // Uncomment this if you need to prevent form submission
+                alert('구매 완료하였습니다.'); // Show the alert
+            });
+        });
+    });
+</script>
 
 </head>
 <body>
@@ -234,17 +260,6 @@
 		</div>
 	</div>
 </div>
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		var button = document.querySelector('.opt_buying button');
-	
-		button.addEventListener('click', function(event) {
-			//event.preventDefault(); // Prevents the form from submitting
-			alert('구매 완료하였습니다.'); // Shows the prompt
-		});
-	});
-	
-</script>
 
 <div class="section bestseller" id="best">
 	<div class="title">
@@ -321,13 +336,18 @@
 						</div>
 					</a>
 					<div class="opt_buying">
-						<a class="btn_plus btnSizeM" href="#">
+						<div style="display:inline;">
+						<form action="/purchase" method="post" class="btn_plus btnSizeM" href="#">
+						<input type="hidden" name="product" value="product2" />
+						<input type="hidden" name="price" value="42000" />
+						<input type="hidden" name="prd_id" value="2" />
+						<button type="submit">바로구매
 							<span class="fl"></span>
 							<span class="sfl"></span>
 							<span class="cross"></span>
 							<i></i>
-							<p>바로구매</p>
-						</a>
+						</form>
+					</div>
 						<a class="btn btnType1 btnSizeM cart" href="ShoppingCart.jsp">
 							<img src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/img/shopping-cart.svg">
 							<span>장바구니</span>
@@ -362,13 +382,18 @@
 						</div>
 					</a>
 					<div class="opt_buying">
-						<a class="btn_plus btnSizeM" href="#">
+						<div style="display:inline;">
+						<form action="/purchase" method="post" class="btn_plus btnSizeM" href="#">
+						<input type="hidden" name="product" value="moisture cream" />
+						<input type="hidden" name="price" value="38000" />
+						<input type="hidden" name="prd_id" value="1" />
+						<button type="submit">바로구매
 							<span class="fl"></span>
 							<span class="sfl"></span>
 							<span class="cross"></span>
 							<i></i>
-							<p>바로구매</p>
-						</a>
+						</form>
+					</div>
 						<a class="btn btnType1 btnSizeM cart" href="ShoppingCart.jsp">
 							<img src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/img/shopping-cart.svg">
 							<span>장바구니</span>
@@ -403,13 +428,18 @@
 						</div>
 					</a>
 					<div class="opt_buying">
-						<a class="btn_plus btnSizeM" href="#">
+						<div style="display:inline;">
+						<form action="/purchase" method="post" class="btn_plus btnSizeM" href="#">
+						<input type="hidden" name="product" value="moisture cream" />
+						<input type="hidden" name="price" value="38000" />
+						<input type="hidden" name="prd_id" value="1" />
+						<button type="submit">바로구매
 							<span class="fl"></span>
 							<span class="sfl"></span>
 							<span class="cross"></span>
 							<i></i>
-							<p>바로구매</p>
-						</a>
+						</form>
+					</div>
 						<a class="btn btnType1 btnSizeM cart" href="ShoppingCart.jsp">
 							<img src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/img/shopping-cart.svg">
 							<span>장바구니</span>
@@ -440,13 +470,18 @@
 						</div>
 					</a>
 					<div class="opt_buying">
-						<a class="btn_plus btnSizeM" href="#">
+						<div style="display:inline;">
+						<form action="/purchase" method="post" class="btn_plus btnSizeM" href="#">
+						<input type="hidden" name="product" value="moisture cream" />
+						<input type="hidden" name="price" value="38000" />
+						<input type="hidden" name="prd_id" value="1" />
+						<button type="submit">바로구매
 							<span class="fl"></span>
 							<span class="sfl"></span>
 							<span class="cross"></span>
 							<i></i>
-							<p>바로구매</p>
-						</a>
+						</form>
+					</div>
 						<a class="btn btnType1 btnSizeM cart" href="ShoppingCart.jsp">
 							<img src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/img/shopping-cart.svg">
 							<span>장바구니</span>
@@ -491,13 +526,18 @@
 						</div>
 					</a>
 					<div class="opt_buying">
-						<a class="btn_plus btnSizeM" href="#">
+						<div style="display:inline;">
+						<form action="/purchase" method="post" class="btn_plus btnSizeM" href="#">
+						<input type="hidden" name="product" value="moisture cream" />
+						<input type="hidden" name="price" value="38000" />
+						<input type="hidden" name="prd_id" value="1" />
+						<button type="submit">바로구매
 							<span class="fl"></span>
 							<span class="sfl"></span>
 							<span class="cross"></span>
 							<i></i>
-							<p>바로구매</p>
-						</a>
+						</form>
+					</div>
 						<a class="btn btnType1 btnSizeM cart" href="ShoppingCart.jsp">
 							<img src="https://cloudsnack-website-images.s3.ap-northeast-2.amazonaws.com/img/shopping-cart.svg">
 							<span>장바구니</span>
@@ -1077,3 +1117,4 @@
 </div>
 </body>
 </html>
+
