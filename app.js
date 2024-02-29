@@ -71,11 +71,25 @@ app.post('/purchase', async (req, res) => {
       // Replace with the actual URL of your WAS, e.g., 'http://192.168.1.2:4000/user-data'
       const response = await axios.post(`http://${WAS_IP}/purchase`, {data: info});
       res.redirect('/prdmain');
-      console.log("purchase completed: (" + response.data + ")");
   } catch (error) {
       res.status(500).send('Error querying WAS: ' + error.message);
   }
 });
+
+app.get('/select', async (req, res) => {
+  var info = 1;
+  try {
+      // Replace with the actual URL of your WAS, e.g., 'http://192.168.1.2:4000/user-data'
+      const response = await axios.post(`http://${WAS_IP}/select`, {data: info});
+      res.redirect('/');
+  } catch (error) {
+      res.status(500).send('Error querying WAS: ' + error.message);
+  }
+});
+
+app.get('/healthcheck', function(req, res){
+  res.status(200).send("it's on");  
+})
 
 app.listen(PORT, () => {
   console.log(`WAS running on ${PORT} port`);
